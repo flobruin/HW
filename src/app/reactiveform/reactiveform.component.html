@@ -1,0 +1,19 @@
+<div class="container">
+    <h1> Reactive form</h1>
+    <form (ngSubmit)="onSubmit()">
+
+        <label for="first-name"> Name: </label> <br>
+        <input id="first-name" type="text" formControlName="name" required> <br>
+        <span *ngIf="profileForm.controls.name.invalid" class="errorMassage" >* Enter your name</span>
+
+        <br>
+
+        <label for="last-name"> Age: </label> <br>
+        <input id="last-name" type="text" formControlName="age" required> <br>
+        <span *ngIf="profileForm.controls.age.invalid" class="errorMassage" >* Enter your password</span>
+
+
+        <p>Complete the form to enable button.</p>
+        <button type="submit" class="btn btn-success" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+</div>
